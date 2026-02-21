@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="image.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Official website of Debate & Dialogue Club, AIKTC" />
+  <title>Debate & Dialogue Club | AIKTC</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ai-red': '#A63A2F',
+            'ai-red-dark': '#8B2B20',
+            'ai-blue': '#1E2A44',
+            'ai-bg': '#f8f9fa',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            body: ['Open Sans', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'rotate': 'rotate 20s linear infinite',
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+            'bounce-slow': 'bounce 2s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            rotate: {
+              from: { transform: 'rotate(0deg)' },
+              to: { transform: 'rotate(360deg)' },
+            },
+            bounce: {
+              '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+              '40%': { transform: 'translateY(-10px)' },
+              '60%': { transform: 'translateY(-5px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #A63A2F;
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8B2B20;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen relative font-body text-ai-blue overflow-x-hidden selection:bg-ai-red/30">
+
+  <!-- Navbar -->
+  <nav id="navbar"
+    class="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-[1200px] z-50 px-8 py-4 transition-all duration-300 rounded-[50px] bg-white/95 backdrop-blur-md shadow-[0_8px_32px_rgba(166,58,47,0.15)] border-ai-red/20 border">
+    <div class="flex items-center justify-between max-w-[1400px] mx-auto">
+      <!-- Logo -->
+      <div class="flex items-center z-[1001] cursor-pointer group">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-ai-red to-ai-red-dark flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform overflow-hidden">
+            <img src="image.png" alt="" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <span className="font-bold text-ai-blue text-lg leading-tight">Debate &</span>
+            <span className="font-bold text-ai-red text-lg leading-tight">Dialogue</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex flex-1 justify-center">
+        <ul class="flex items-center gap-10 list-none">
+          <li><a href="#home"
+              class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                class="z-10">Home</span><span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+          </li>
+          <li><a href="#about"
+              class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                class="z-10">About</span><span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+          </li>
+          <li><a href="events.html"
+              class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                class="z-10">Events</span><span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+          </li>
+          <li><a href="team.html"
+              class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                class="z-10">Team</span><span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CTA & Mobile Toggle -->
+      <div class="flex items-center gap-4">
+        <button onclick="window.open('https://chat.whatsapp.com/DCftpin2nTLDvwNefvMjHz?mode=hqrc', '_blank')"
+          class="hidden md:block px-6 py-2.5 bg-gradient-to-r from-ai-red to-ai-red-dark text-white rounded-xl font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+          Join Club
+        </button>
+
+        <button id="mobile-menu-btn"
+          class="md:hidden flex flex-col justify-center items-center w-8 h-8 z-[1001] space-y-1.5">
+          <span class="block w-6 h-0.5 bg-gray-800 transition-all duration-300 rounded-sm origin-center"></span>
+          <span class="block w-6 h-0.5 bg-gray-800 transition-all duration-300 rounded-sm origin-center"></span>
+          <span class="block w-6 h-0.5 bg-gray-800 transition-all duration-300 rounded-sm origin-center"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+      class="fixed inset-x-0 top-[80px] p-4 transition-all duration-300 md:hidden opacity-0 -translate-y-4 pointer-events-none">
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col gap-4">
+        <a href="#home"
+          class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">Home</a>
+        <a href="#about"
+          class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">About</a>
+        <a href="events.html"
+          class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">Events</a>
+        <a href="team.html"
+          class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">Team</a>
+        <div class="h-px bg-gray-100 my-2"></div>
+        <button class="w-full py-3 bg-gradient-to-r from-ai-red to-ai-red-dark text-white rounded-xl font-semibold">
+          Join Club
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-28 pb-16">
+      <!-- Background Graphic Elements -->
+      <div class="absolute inset-0 pointer-events-none z-0">
+        <div
+          class="absolute top-[15%] right-[10%] w-[200px] h-[200px] border-2 border-dashed border-[#F5E3B3] rounded-full animate-rotate opacity-60 md:opacity-100">
+        </div>
+        <div
+          class="absolute bottom-[20%] left-[5%] w-[2px] h-[150px] bg-gradient-to-t from-transparent via-ai-red to-transparent animate-pulse-slow">
+        </div>
+        <div class="absolute top-[40%] left-[15%] w-[100px] h-[100px] opacity-30 animate-float"
+          style="background-image: radial-gradient(circle, #1E2A44 2px, transparent 2px), radial-gradient(circle, #A63A2F 2px, transparent 2px); background-size: 20px 20px; background-position: 0 0, 10px 10px;">
+        </div>
+        <div
+          class="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-b from-ai-red/5 to-transparent rounded-bl-full blur-3xl">
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-t from-ai-blue/5 to-transparent rounded-tr-full blur-3xl">
+        </div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10 text-center">
+        <!-- Badge -->
+        <div
+          class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-8 backdrop-blur-md animate-float">
+          <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">AIKTC's Debate & Dialogue Club</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 relative inline-block">
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-ai-red/10 blur-[60px] rounded-full -z-10">
+          </div>
+          <span
+            class="block bg-clip-text text-transparent bg-gradient-to-br from-ai-blue to-ai-red mb-2 animate-[fadeInUp_1s_ease-out]">
+            Speak to Inspire.
+          </span>
+          <span
+            class="block bg-clip-text text-transparent bg-gradient-to-br from-ai-blue to-ai-red animate-[fadeInUp_1s_ease-out_0.3s_both]">
+            Lead to Influence.
+          </span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+          Empowering students in communication, confidence, and leadership through debate, Model United Nations, and
+          public speaking excellence.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row gap-6 justify-center mb-20">
+          <button onclick="window.open('https://chat.whatsapp.com/DCftpin2nTLDvwNefvMjHz?mode=hqrc', '_blank')"
+            class="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-ai-red to-ai-red-dark text-white rounded-xl font-semibold text-lg shadow-[0_8px_25px_rgba(166,58,47,0.3)] hover:shadow-[0_12px_35px_rgba(166,58,47,0.4)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+            <span
+              class="absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-[left] duration-500 group-hover:left-[100%]"></span>
+            <span>Become a Member</span>
+            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </button>
+
+          <button onclick="location.href='events.html'"
+            class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-ai-blue border-2 border-ai-blue rounded-xl font-semibold text-lg hover:bg-ai-blue hover:text-white hover:shadow-[0_8px_25px_rgba(30,42,68,0.3)] hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm">
+            <span>Explore Events</span>
+            <i class="fa-regular fa-calendar group-hover:scale-110 transition-transform"></i>
+          </button>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div
+            class="group relative bg-white p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)] border-l-4 border-l-ai-red">
+            <div
+              class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mb-4 group-hover:bg-ai-red transition-colors duration-300">
+              <i
+                class="fa-solid fa-users text-lg text-ai-red group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3 class="text-base font-bold text-ai-blue mb-2">Active Student Community</h3>
+            <p class="text-gray-500 text-xs leading-relaxed">Focused on Debate & Dialogue</p>
+          </div>
+
+          <div
+            class="group relative bg-white p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)] border-l-4 border-l-ai-red">
+            <div
+              class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mb-4 group-hover:bg-ai-red transition-colors duration-300">
+              <i
+                class="fa-solid fa-chalkboard-user text-lg text-ai-red group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3 class="text-base font-bold text-ai-blue mb-2">Skill-Building Sessions</h3>
+            <p class="text-gray-500 text-xs leading-relaxed">Public Speaking & MUN Training</p>
+          </div>
+
+          <div
+            class="group relative bg-white p-6 rounded-2xl transition-all duration-300 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)] border-l-4 border-l-ai-red">
+            <div
+              class="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center mb-4 group-hover:bg-ai-red transition-colors duration-300">
+              <i class="fa-solid fa-star text-lg text-ai-red group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3 class="text-base font-bold text-ai-blue mb-2">Leadership Development</h3>
+            <p class="text-gray-500 text-xs leading-relaxed">Empowering Future Speakers</p>
+          </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section id="about" class="py-24 bg-slate-50 relative">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-20">
+          <h2 class="text-3xl md:text-4xl font-bold text-ai-blue mb-4 tracking-tight">
+            Our Core Pillars
+          </h2>
+          <div class="w-12 h-1 bg-ai-red mx-auto rounded-full opacity-80"></div>
+          <p class="text-gray-500 mt-6 max-w-2xl mx-auto font-light leading-relaxed">
+            We focus on four key areas to help you grow from a student into a confident leader.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="group bg-white p-8 rounded-3xl transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-100 hover:border-gray-200">
+            <div
+              class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center mb-6 group-hover:bg-ai-red transition-colors duration-300">
+              <i
+                class="fa-solid fa-microphone-lines text-xl text-ai-red group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3 class="text-lg font-bold text-ai-blue mb-3">Public Speaking</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Master the art of effective communication and overcome stage fright through supported weekly sessions.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="group bg-white p-8 rounded-3xl transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-100 hover:border-gray-200">
+            <div
+              class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center mb-6 group-hover:bg-ai-red transition-colors duration-300">
+              <i
+                class="fa-solid fa-gavel text-xl text-ai-red group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3 class="text-lg font-bold text-ai-blue mb-3">Debates</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Engage in structured arguments, sharpen your critical thinking, and broaden your perspectives.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="group bg-white p-8 rounded-3xl transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-100 hover:border-gray-200">
+            <div
+              class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center mb-6 group-hover:bg-ai-red transition-colors duration-300">
+              <i
+                class="fa-solid fa-earth-americas text-xl text-ai-red group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3 class="text-lg font-bold text-ai-blue mb-3">Model UN</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Simulate UN committees, draft resolutions, and solve global issues as a diplomat.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="group bg-white p-8 rounded-3xl transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-100 hover:border-gray-200">
+            <div
+              class="w-14 h-14 rounded-2xl bg-red-50 flex items-center justify-center mb-6 group-hover:bg-ai-red transition-colors duration-300">
+              <i
+                class="fa-solid fa-chess text-xl text-ai-red group-hover:text-white transition-colors duration-300"></i>
+            </div>
+            <h3 class="text-lg font-bold text-ai-blue mb-3">Leadership</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Develop essential leadership skills by organizing events and mentoring juniors.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-24 relative">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-20">
+          <h2 class="text-3xl md:text-4xl font-bold text-ai-blue mb-4 tracking-tight">
+            Upcoming Events
+          </h2>
+          <div class="w-12 h-1 bg-ai-red mx-auto rounded-full opacity-80"></div>
+          <p class="text-gray-500 mt-6 max-w-2xl mx-auto font-light leading-relaxed">
+            Join us for exciting debates, workshops, and networking opportunities.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+          <!-- Event Card 2 -->
+          <div
+            class="group bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-ai-red transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(166,58,47,0.2)]">
+            <div
+              class="h-48 bg-gradient-to-br from-ai-blue to-ai-blue flex items-center justify-center text-white overflow-hidden">
+              <img src="events1.png" alt="AIKTC MUN" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-8">
+              <div class="flex items-center gap-2 mb-4 text-sm text-ai-red">
+                <i class="fa-solid fa-calendar"></i>
+                <span>Coming Soon</span>
+              </div>
+              <h3 class="text-xl font-bold text-ai-blue mb-3">AIKTC MUN</h3>
+              <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                Where Ideas Spark Change and Where Leaders are Born.
+              </p>
+              <button onclick="location.href='events.html'"
+                class="w-full py-2 border-2 border-ai-red text-ai-red rounded-lg font-semibold hover:bg-ai-red hover:text-white transition-all duration-300">
+                Learn More
+              </button>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="join" class="py-20 container mx-auto px-6 text-center">
+      <div class="bg-ai-blue rounded-[30px] p-12 md:p-20 relative overflow-hidden text-white shadow-2xl">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-ai-red rounded-full blur-[100px] opacity-50"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full blur-[100px] opacity-30"></div>
+
+        <div class="relative z-10 max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-bold mb-6 font-sans">Ready to Find Your Voice?</h2>
+          <p class="text-blue-100 text-lg mb-10 leading-relaxed">
+            Join a community of critical thinkers, eloquent speakers, and future leaders.
+            Whether you're a beginner or a seasoned debater, there's a place for you here.
+          </p>
+          <button onclick="window.open('https://chat.whatsapp.com/DCftpin2nTLDvwNefvMjHz?mode=hqrc', '_blank')"
+            class="bg-white text-ai-blue px-10 py-4 rounded-xl font-bold text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-105 transition-all duration-300">
+            Join Us Now
+          </button>
+
+          <div class="flex gap-4 justify-center mt-8">
+            <a href="https://www.instagram.com/debate_n_dialogue_club"
+              class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center hover:bg-ai-red transition-colors duration-300">
+              <i class="fa-brands fa-instagram text-white text-lg"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/debate-dialogue-club/"
+              class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center hover:bg-ai-red transition-colors duration-300">
+              <i class="fa-brands fa-linkedin-in text-white text-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ai-blue text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Brand -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3 mb-2">
+            <div
+              class="w-8 h-8 rounded-full bg-gradient-to-br from-ai-red to-ai-red-dark flex items-center justify-center font-bold text-sm">
+              D</div>
+            <h3 class="text-xl font-bold">Debate & Dialogue</h3>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Anjuman-I-Islam's Kalsekar Technical Campus.<br />
+            Fostering the leaders of tomorrow through the power of speech today.
+          </p>
+          <div class="flex gap-4 pt-2">
+            <a href="https://www.instagram.com/debate_n_dialogue_club"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-ai-red transition-colors"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/debate-dialogue-club/"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-ai-red transition-colors"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-ai-red transition-colors"><i
+                class="fa-brands fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-ai-red">Quick Links</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Upcoming Events</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Executive Board</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Constitution</a></li>
+          </ul>
+        </div>
+
+        <!-- Activities -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-ai-red">Activities</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li><a href="#" class="hover:text-white transition-colors">Weekly Debates</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">MUN Workshops</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Public Speaking Labs</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Guest Lectures</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h4 class="text-lg font-bold mb-6 text-ai-red">Stay Updated</h4>
+          <p class="text-gray-400 text-sm mb-4">Subscribe to receive updates on upcoming debates.</p>
+          <form class="flex gap-2">
+            <input type="email" placeholder="Email address"
+              class="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm w-full focus:outline-none focus:border-ai-red text-white placeholder-gray-500" />
+            <button type="button"
+              class="bg-ai-red px-3 py-2 rounded-lg hover:bg-ai-red-dark transition-colors text-white">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-500 text-sm text-center md:text-left">
+          &copy; <span id="year">2024</span> AIKTC Debate & Dialogue Club. All rights reserved.
+        </p>
+        <div class="flex gap-6 text-sm text-gray-500">
+          <a href="#" class="hover:text-white">Privacy Policy</a>
+          <a href="#" class="hover:text-white">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Logic -->
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
+
+
+<!---👥 Active Student Community
+Focused on Debate & Dialogue
+
+🎤 Skill-Building Sessions
+Public Speaking & MUN Training
+
+🌟 Leadership Development
+Empowering Future Speakers->

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="image.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Events Showcase - Debate & Dialogue Club, AIKTC" />
+    <title>Events | Debate & Dialogue Club</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ai-red': '#A63A2F',
+                        'ai-red-dark': '#8B2B20',
+                        'ai-blue': '#1E2A44',
+                        'ai-bg': '#f8f9fa',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'rotate': 'rotate 20s linear infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        rotate: {
+                            from: { transform: 'rotate(0deg)' },
+                            to: { transform: 'rotate(360deg)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #A63A2F;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B2B20;
+        }
+
+        .event-card:hover .event-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen relative font-body text-ai-blue overflow-x-hidden selection:bg-ai-red/30 pt-32">
+
+    <!-- Navbar -->
+    <nav id="navbar"
+        class="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-[1200px] z-50 px-8 py-4 transition-all duration-300 rounded-[50px] bg-white/95 backdrop-blur-md shadow-[0_8px_32px_rgba(166,58,47,0.15)] border-ai-red/20 border">
+        <div class="flex items-center justify-between max-w-[1400px] mx-auto">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center z-[1001] cursor-pointer group">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-br from-ai-red to-ai-red-dark flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform overflow-hidden">
+                        <img src="image.png" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-ai-blue text-lg leading-tight">Debate &</span>
+                        <span class="font-bold text-ai-red text-lg leading-tight">Dialogue</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex flex-1 justify-center">
+                <ul class="flex items-center gap-10 list-none">
+                    <li><a href="index.html"
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                                class="z-10">Home</span><span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+                    </li>
+                    <li><a href="index.html#about"
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                                class="z-10">About</span><span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+                    </li>
+                    <li><a href="events.html"
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                                class="z-10 text-ai-red">Events</span><span
+                                class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300"></span></a>
+                    </li>
+                    <li><a href="team.html"
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                                class="z-10">Team</span><span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <button onclick="window.open('https://chat.whatsapp.com/DCftpin2nTLDvwNefvMjHz?mode=hqrc', '_blank')"
+                    class="hidden md:block px-6 py-2.5 bg-gradient-to-r from-ai-red to-ai-red-dark text-white rounded-xl font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                    Join Club
+                </button>
+
+                <button id="mobile-menu-btn"
+                    class="md:hidden flex flex-col justify-center items-center w-8 h-8 z-[1001] space-y-1.5">
+                    <span
+                        class="block w-6 h-0.5 bg-gray-800 transition-all duration-300 rounded-sm origin-center"></span>
+                    <span
+                        class="block w-6 h-0.5 bg-gray-800 transition-all duration-300 rounded-sm origin-center"></span>
+                    <span
+                        class="block w-6 h-0.5 bg-gray-800 transition-all duration-300 rounded-sm origin-center"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-x-0 top-[80px] p-4 transition-all duration-300 md:hidden opacity-0 -translate-y-4 pointer-events-none">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col gap-4">
+                <a href="index.html"
+                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">Home</a>
+                <a href="index.html#about"
+                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">About</a>
+                <a href="events.html"
+                    class="mobile-link text-lg font-semibold text-ai-red text-center py-2 bg-red-50 rounded-lg transition-colors">Events</a>
+                <a href="team.html"
+                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">Team</a>
+                <div class="h-px bg-gray-100 my-2"></div>
+                <button onclick="window.open('https://chat.whatsapp.com/DCftpin2nTLDvwNefvMjHz?mode=hqrc', '_blank')"
+                    class="w-full py-3 bg-gradient-to-r from-ai-red to-ai-red-dark text-white rounded-xl font-semibold">
+                    Join Club
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="min-h-screen">
+        <!-- Header Section -->
+        <section class="relative pt-20 pb-16 overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 pointer-events-none z-0">
+                <div class="absolute top-[10%] left-[5%] w-[300px] h-[300px] bg-ai-red/5 rounded-full blur-[80px]">
+                </div>
+                <div
+                    class="absolute bottom-[20%] right-[10%] w-[200px] h-[200px] bg-ai-blue/5 rounded-full blur-[60px]">
+                </div>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <div
+                    class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md animate-fade-in-up">
+                    <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Our Journey So Far</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-ai-blue mb-6 animate-fade-in-up"
+                    style="animation-delay: 0.1s;">
+                    Moments That Defined Us
+                </h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up"
+                    style="animation-delay: 0.2s;">
+                    Explore the highlights of our past events, where ideas turned into action and students into leaders.
+                </p>
+            </div>
+        </section>
+
+        <!-- Past Events Grid -->
+        <section class="py-12 bg-white/50 relative">
+            <div class="container mx-auto px-6">
+                <!-- Events Grid -->
+                <div class="grid grid-cols-1 gap-8 pb-20 justify-items-center">
+
+                    <!-- Event Card: AIKTC MUN 2026 -->
+                    <div onclick="location.href='mungal26.html'"
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 event-card animate-fade-in-up cursor-pointer w-full max-w-lg"
+                        style="animation-delay: 0.4s;">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="eventpic/day2/7.jpeg" alt="AIKTC MUN 2026"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
+                            </div>
+                            <div class="absolute bottom-4 left-4">
+                                <span
+                                    class="px-3 py-1 bg-ai-red text-white text-xs font-bold rounded-lg mb-2 inline-block">MUN
+                                    Event</span>
+                                <p class="text-white/80 text-sm font-medium"><i
+                                        class="fa-regular fa-calendar mr-2"></i>January 2026</p>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold text-ai-blue mb-3 group-hover:text-ai-red transition-colors">
+                                AIKTC MUN 2026</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                                Join us for the most prestigious Model United Nations conference of the year. Debate
+                                global issues, draft resolutions, and lead the change.
+                            </p>
+                            <div class="inline-flex items-center text-ai-red font-semibold text-sm group/link">
+                                View Gallery <i
+                                    class="fa-solid fa-arrow-right ml-2 group-hover/link:translate-x-1 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Same as Index) -->
+    <footer class="bg-ai-blue text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div
+                            class="w-8 h-8 rounded-full bg-gradient-to-br from-ai-red to-ai-red-dark flex items-center justify-center font-bold text-sm">
+                            D</div>
+                        <h3 class="text-xl font-bold">Debate & Dialogue</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Anjuman-I-Islam's Kalsekar Technical Campus.<br />
+                        Fostering the leaders of tomorrow through the power of speech today.
+                    </p>
+                    <div class="flex gap-4 pt-2">
+                        <a href="https://www.instagram.com/debate_n_dialogue_club"
+                            class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-ai-red transition-colors"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/debate-dialogue-club/"
+                            class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-ai-red transition-colors"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-ai-red transition-colors"><i
+                                class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="index.html#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="events.html" class="hover:text-white transition-colors">Upcoming Events</a></li>
+                        <li><a href="team.html" class="hover:text-white transition-colors">Executive Board</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Constitution</a></li>
+                    </ul>
+                </div>
+
+                <!-- Activities -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red">Activities</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Weekly Debates</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">MUN Workshops</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Public Speaking Labs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Guest Lectures</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red">Stay Updated</h4>
+                    <p class="text-gray-400 text-sm mb-4">Subscribe to receive updates on upcoming debates.</p>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Email address"
+                            class="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm w-full focus:outline-none focus:border-ai-red text-white placeholder-gray-500" />
+                        <button type="button"
+                            class="bg-ai-red px-3 py-2 rounded-lg hover:bg-ai-red-dark transition-colors text-white">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; <span id="year">2024</span> AIKTC Debate & Dialogue Club. All rights reserved.
+                </p>
+                <div class="flex gap-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic for Mobile Menu -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+
+                // Animate hamburger to X
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].classList.add('rotate-45', 'translate-y-2');
+                spans[1].classList.add('opacity-0');
+                spans[2].classList.add('-rotate-45', '-translate-y-2');
+            } else {
+                mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+
+                // Animate X back to hamburger
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].classList.remove('rotate-45', 'translate-y-2');
+                spans[1].classList.remove('opacity-0');
+                spans[2].classList.remove('-rotate-45', '-translate-y-2');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].classList.remove('rotate-45', 'translate-y-2');
+                spans[1].classList.remove('opacity-0');
+                spans[2].classList.remove('-rotate-45', '-translate-y-2');
+            });
+        });
+
+        // Update Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
