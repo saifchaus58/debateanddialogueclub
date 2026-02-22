@@ -367,46 +367,56 @@
       </div>
     </section>
 
-    <!-- Events Section -->
-    <section id="events" class="py-24 relative">
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 relative overflow-hidden">
       <div class="container mx-auto px-6">
-        <div class="text-center mb-20">
-          <h2 class="text-3xl md:text-4xl font-bold text-ai-blue mb-4 tracking-tight">
-            Upcoming Events
-          </h2>
-          <div class="w-12 h-1 bg-ai-red mx-auto rounded-full opacity-80"></div>
-          <p class="text-gray-500 mt-6 max-w-2xl mx-auto font-light leading-relaxed">
-            Join us for exciting debates, workshops, and networking opportunities.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-
-          <!-- Event Card 2 -->
-          <div
-            class="group bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-ai-red transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(166,58,47,0.2)]">
-            <div
-              class="h-48 bg-gradient-to-br from-ai-blue to-ai-blue flex items-center justify-center text-white overflow-hidden">
-              <img src="events1.png" alt="AIKTC MUN" class="w-full h-full object-cover" />
+        <div class="flex flex-col lg:flex-row items-center gap-16">
+          <div class="w-full lg:w-1/2 space-y-8">
+            <div class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 backdrop-blur-md">
+              <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Moments captured</span>
             </div>
-            <div class="p-8">
-              <div class="flex items-center gap-2 mb-4 text-sm text-ai-red">
-                <i class="fa-solid fa-calendar"></i>
-                <span>Coming Soon</span>
-              </div>
-              <h3 class="text-xl font-bold text-ai-blue mb-3">AIKTC MUN</h3>
-              <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                Where Ideas Spark Change and Where Leaders are Born.
-              </p>
-              <button onclick="location.href='events.html'"
-                class="w-full py-2 border-2 border-ai-red text-ai-red rounded-lg font-semibold hover:bg-ai-red hover:text-white transition-all duration-300">
-                Learn More
-              </button>
+            <h2 class="text-4xl md:text-5xl font-bold text-ai-blue leading-tight tracking-tight">
+              Witness the <span class="text-ai-red">Impact</span> in Action
+            </h2>
+            <p class="text-lg text-gray-500 font-light leading-relaxed">
+              Step into our world of diplomacy and discourse. Explore the gallery of AIKTC MUN 2026 and see how students
+              transform into global citizens.
+            </p>
+            <div class="pt-4">
+              <a href="mungal26.html"
+                class="inline-flex items-center gap-3 px-8 py-4 bg-ai-blue text-white rounded-xl font-bold text-lg hover:bg-ai-blue/90 hover:shadow-[0_15px_35px_-10px_rgba(30,42,68,0.4)] hover:-translate-y-1 transition-all duration-300 group">
+                <span>View Event Gallery</span>
+                <i class="fa-solid fa-images group-hover:scale-110 transition-transform"></i>
+              </a>
             </div>
           </div>
 
-
+          <div class="w-full lg:w-1/2 relative">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="space-y-4 pt-8">
+                <div
+                  class="rounded-3xl overflow-hidden shadow-lg transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <img src="eventpic/day2/1.jpeg" alt="Gallery Preview 1" class="w-full h-48 object-cover">
+                </div>
+                <div
+                  class="rounded-3xl overflow-hidden shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <img src="eventpic/day2/2.jpeg" alt="Gallery Preview 2" class="w-full h-64 object-cover">
+                </div>
+              </div>
+              <div class="space-y-4">
+                <div
+                  class="rounded-3xl overflow-hidden shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <img src="eventpic/day2/3.jpeg" alt="Gallery Preview 3" class="w-full h-64 object-cover">
+                </div>
+                <div
+                  class="rounded-3xl overflow-hidden shadow-lg transform -rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <img src="eventpic/day2/4.jpeg" alt="Gallery Preview 4" class="w-full h-48 object-cover">
+                </div>
+              </div>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute -z-10 -top-10 -right-10 w-64 h-64 bg-ai-red/5 rounded-full blur-3xl"></div>
+          </div>
         </div>
       </div>
     </section>
