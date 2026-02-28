@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="image.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Corporate Mock Interview Competition 2026 - Career Readiness Event" />
+    <title>Mock Interview Competition 2026 | Debate & Dialogue Club</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ai-red': '#A63A2F',
+                        'ai-red-dark': '#8B2B20',
+                        'ai-blue': '#1E2A44',
+                        'ai-bg': '#f8f9fa',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'rotate': 'rotate 20s linear infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        rotate: {
+                            from: { transform: 'rotate(0deg)' },
+                            to: { transform: 'rotate(360deg)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #A63A2F;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B2B20;
+        }
+    </style>
+</head>
+
+<body
+    class="min-h-screen relative font-body text-ai-blue overflow-x-hidden selection:bg-ai-red/30 pt-32 text-decoration-none">
+
+    <!-- Navbar -->
+    <nav id="navbar"
+        class="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-[1200px] z-50 px-8 py-4 transition-all duration-300 rounded-[50px] bg-white/95 backdrop-blur-md shadow-[0_8px_32px_rgba(166,58,47,0.15)] border-ai-red/20 border">
+        <div class="flex items-center justify-between max-w-[1400px] mx-auto">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center z-[1001] cursor-pointer group no-underline">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-gradient-to-br from-ai-red to-ai-red-dark flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform overflow-hidden">
+                        <img src="image.png" alt="" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-ai-blue text-lg leading-tight">Debate &</span>
+                        <span class="font-bold text-ai-red text-lg leading-tight">Dialogue</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex flex-1 justify-center">
+                <ul class="flex items-center gap-10 list-none">
+                    <li><a href="index.html"
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors no-underline"><span
+                                class="z-10">Home</span><span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+                    </li>
+                    <li><a href="index.html#about"
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors no-underline"><span
+                                class="z-10">About</span><span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+                    </li>
+                    <li><a href="events.html"
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors no-underline"><span
+                                class="z-10 text-ai-red font-bold">Events</span><span
+                                class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300"></span></a>
+                    </li>
+                    <li><a href="team.html"
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors no-underline"><span
+                                class="z-10">Team</span><span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <button onclick="window.open('https://chat.whatsapp.com/DCftpin2nTLDvwNefvMjHz?mode=hqrc', '_blank')"
+                    class="hidden md:block px-6 py-2.5 bg-gradient-to-r from-ai-red to-ai-red-dark text-white rounded-xl font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                    Join Club
+                </button>
+
+                <button id="mobile-menu-btn"
+                    class="md:hidden flex flex-col justify-center items-center w-8 h-8 z-[1001] space-y-1.5">
+                    <span
+                        class="block w-6 h-0.5 bg-gray-800 transition-all duration-300 rounded-sm origin-center"></span>
+                    <span
+                        class="block w-6 h-0.5 bg-gray-800 transition-all duration-300 rounded-sm origin-center"></span>
+                    <span
+                        class="block w-6 h-0.5 bg-gray-800 transition-all duration-300 rounded-sm origin-center"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-x-0 top-[80px] p-4 transition-all duration-300 md:hidden opacity-0 -translate-y-4 pointer-events-none">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col gap-4">
+                <a href="index.html"
+                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors no-underline">Home</a>
+                <a href="index.html#about"
+                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors no-underline">About</a>
+                <a href="events.html"
+                    class="mobile-link text-lg font-semibold text-ai-red text-center py-2 bg-red-50 rounded-lg transition-colors no-underline">Events</a>
+                <a href="team.html"
+                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors no-underline">Team</a>
+                <div class="h-px bg-gray-100 my-2"></div>
+                <button onclick="window.open('https://chat.whatsapp.com/DCftpin2nTLDvwNefvMjHz?mode=hqrc', '_blank')"
+                    class="w-full py-3 bg-gradient-to-r from-ai-red to-ai-red-dark text-white rounded-xl font-semibold">
+                    Join Club
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="min-h-screen">
+        <!-- Header Section -->
+        <section class="relative pt-20 pb-16 overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <a href="events.html"
+                    class="inline-flex items-center text-ai-red font-semibold mb-6 hover:-translate-x-1 transition-transform no-underline">
+                    <i class="fa-solid fa-arrow-left mr-2"></i> Back to Events
+                </a>
+                <div
+                    class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md">
+                    <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Career Readiness</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-ai-blue mb-4 animate-fade-in-up">
+                    Corporate Mock Interview Competition 2026
+                </h1>
+                <p class="text-xl text-gray-600 font-medium mb-8 animate-fade-in-up" style="animation-delay: 0.1s;">
+                    Simulating Real Corporate Hiring Processes
+                </p>
+                <div class="flex flex-wrap justify-center gap-6 text-gray-500 mb-8 animate-fade-in-up"
+                    style="animation-delay: 0.1s;">
+                    <span class="flex items-center"><i class="fa-regular fa-calendar mr-2 text-ai-red"></i> Date Coming
+                        Soon</span>
+                    <span class="flex items-center"><i class="fa-solid fa-location-dot mr-2 text-ai-red"></i> Seminar
+                        Hall, AIKTC</span>
+                    <span class="flex items-center"><i class="fa-solid fa-clock mr-2 text-ai-red"></i> 10:00 AM - 4:00
+                        PM</span>
+                </div>
+                <div class="max-w-3xl mx-auto text-lg text-gray-500 mb-10 animate-fade-in-up"
+                    style="animation-delay: 0.15s;">
+                    Organized by the Debate and Dialogue Club, this structured career-readiness competition simulates
+                    real corporate hiring processes across three progressive evaluation phases to prepare students for
+                    actual company recruitment standards.
+                </div>
+
+                <div class="flex justify-center animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="flex flex-col items-center gap-4">
+                        <p class="text-sm font-semibold text-ai-red uppercase tracking-widest">Step into a real-world
+                            hiring simulation</p>
+                        <button
+                            onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSe8Zxz_EVoluJlseq0qAiviaipd-FYWaH6JIRZhyhghDW0N0Q/viewform', '_blank')"
+                            class="px-10 py-4 bg-gradient-to-r from-ai-red to-ai-red-dark text-white rounded-2xl font-bold text-lg shadow-[0_10px_30px_rgba(166,58,47,0.3)] hover:shadow-[0_15px_40px_rgba(166,58,47,0.4)] hover:-translate-y-1 transition-all duration-300">
+                            Register Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Details Section -->
+        <section class="py-16 bg-white/50 relative">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <!-- Main Content -->
+                    <div class="lg:col-span-2 space-y-12">
+                        <div class="relative rounded-[40px] overflow-hidden shadow-2xl h-[400px]">
+                            <img src="image.png" alt="Competition Banner" class="w-full h-full object-cover">
+                        </div>
+
+                        <div class="space-y-6">
+                            <h2 class="text-3xl font-bold text-ai-blue">About the Event</h2>
+                            <p class="text-gray-600 leading-relaxed text-lg">
+                                The Corporate Mock Interview Competition 2026 is a comprehensive placement-simulation
+                                experience created to bridge the gap between academic learning and corporate
+                                expectations. This competition replicates real-world hiring procedures followed by
+                                companies during campus placements, allowing participants to experience the complete
+                                recruitment cycle in a structured and competitive format.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed text-lg">
+                                Conducted in three progressive evaluation phases, the competition assesses participants
+                                on aptitude, analytical reasoning, communication skills, technical competence, and HR
+                                suitability. Each phase is designed to reflect actual recruitment rounds used by
+                                corporate organizations.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed text-lg">
+                                Through this simulation-based model, participants gain a deeper understanding of how
+                                recruiters evaluate candidates — not just on knowledge, but also on clarity of thought,
+                                leadership presence, confidence, ethical mindset, and decision-making under pressure.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed text-lg font-medium italic">
+                                The event aims to help students identify their strengths and areas of improvement while
+                                building industry-ready professionalism before they appear for real placement drives.
+                            </p>
+                        </div>
+
+                        <!-- Event Structure -->
+                        <div class="space-y-8">
+                            <h2 class="text-3xl font-bold text-ai-blue">Evaluation Phases</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div
+                                    class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div
+                                        class="w-12 h-12 bg-ai-red/10 rounded-2xl flex items-center justify-center text-ai-red mb-4 font-bold text-lg">
+                                        01</div>
+                                    <h3 class="text-xl font-bold text-ai-blue mb-2">Aptitude Assessment</h3>
+                                    <p class="text-gray-500 text-sm">Logical reasoning and analytical problems to
+                                        evaluate problem-solving ability, quantitative aptitude, and time management.
+                                    </p>
+                                </div>
+                                <div
+                                    class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow active">
+                                    <div
+                                        class="w-12 h-12 bg-ai-blue/10 rounded-2xl flex items-center justify-center text-ai-blue mb-4 font-bold text-lg">
+                                        02</div>
+                                    <h3 class="text-xl font-bold text-ai-blue mb-2">Group Discussion</h3>
+                                    <p class="text-gray-500 text-sm">Demonstrate communication skills, teamwork, and
+                                        leadership qualities by presenting ideas professionally in a group setting.</p>
+                                </div>
+                                <div
+                                    class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div
+                                        class="w-12 h-12 bg-green-50 rounded-2xl flex items-center justify-center text-green-600 mb-4 font-bold text-lg">
+                                        03</div>
+                                    <h3 class="text-xl font-bold text-ai-blue mb-2">Technical + HR</h3>
+                                    <p class="text-gray-500 text-sm">Face a corporate-style panel interview assessing
+                                        technical knowledge, personality traits, and overall professional suitability.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                                <h3 class="text-xl font-bold text-ai-blue mb-4 flex items-center">
+                                    <i class="fa-solid fa-list-check mr-3 text-ai-red"></i> Key Takeaways
+                                </h3>
+                                <ul class="space-y-3 text-gray-600 text-sm">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-ai-red mt-1.5 text-[10px]"></i>
+                                        Exposure to real corporate interview standards
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-ai-red mt-1.5 text-[10px]"></i>
+                                        Improved communication & presentation skills
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-ai-red mt-1.5 text-[10px]"></i>
+                                        Structured preparation for Technical & HR rounds
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-ai-red mt-1.5 text-[10px]"></i>
+                                        Guidance on building a strong fresher resume
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-ai-red mt-1.5 text-[10px]"></i>
+                                        Awareness of professional corporate expectations
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                                <h3 class="text-xl font-bold text-ai-blue mb-4 flex items-center">
+                                    <i class="fa-solid fa-bullseye mr-3 text-ai-red"></i> Skill Development
+                                </h3>
+                                <ul class="space-y-3 text-gray-600 text-sm">
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-ai-red mt-1.5 text-[10px]"></i>
+                                        Analytical and logical reasoning abilities
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-ai-red mt-1.5 text-[10px]"></i>
+                                        Professional articulation & communication
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-ai-red mt-1.5 text-[10px]"></i>
+                                        Leadership presence in group environments
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-ai-red mt-1.5 text-[10px]"></i>
+                                        Confidence under interview pressure
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-ai-red mt-1.5 text-[10px]"></i>
+                                        Decision-making in high-pressure situations
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar info -->
+                    <div class="space-y-8">
+                        <div class="bg-ai-blue rounded-3xl p-8 text-white shadow-xl">
+                            <h3 class="text-2xl font-bold mb-6">Event Info</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                                        <i class="fa-regular fa-calendar"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-white/60 text-sm">Date</p>
+                                        <p class="font-semibold text-lg">To be announced</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-white/60 text-sm">Location</p>
+                                        <p class="font-semibold text-lg">AIKTC Campus</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-user-graduate"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-white/60 text-sm">Target Audience</p>
+                                        <p class="font-semibold text-lg">Pre-final & Final Year</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button
+                                onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSe8Zxz_EVoluJlseq0qAiviaipd-FYWaH6JIRZhyhghDW0N0Q/viewform', '_blank')"
+                                class="w-full mt-10 py-4 bg-ai-red hover:bg-ai-red-dark text-white rounded-xl font-bold transition-colors shadow-lg">
+                                Register Now
+                            </button>
+                        </div>
+
+                        <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                            <h3 class="text-xl font-bold text-ai-blue mb-4">Contact for Queries</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3 text-gray-600">
+                                    <i class="fa-solid fa-envelope text-ai-red"></i>
+                                    <span class="text-sm">debateclub@aiktc.ac.in</span>
+                                </div>
+                                <div class="flex items-center gap-3 text-gray-600">
+                                    <i class="fa-brands fa-instagram text-ai-red"></i>
+                                    <span class="text-sm">@debate_n_dialogue_club</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-ai-blue text-white pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div
+                            class="w-8 h-8 rounded-full bg-gradient-to-br from-ai-red to-ai-red-dark flex items-center justify-center font-bold text-sm">
+                            D</div>
+                        <h3 class="text-xl font-bold">Debate & Dialogue</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Anjuman-I-Islam's Kalsekar Technical Campus.<br />
+                        Fostering the leaders of tomorrow through the power of speech today.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red uppercase tracking-wider text-sm">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="index.html#about" class="hover:text-white transition-colors no-underline">About
+                                Us</a></li>
+                        <li><a href="events.html" class="hover:text-white transition-colors no-underline">Upcoming
+                                Events</a></li>
+                        <li><a href="team.html"
+                                class="hover:text-white transition-colors no-underline text-ai-red font-semibold">Executive
+                                Board</a></li>
+                    </ul>
+                </div>
+
+                <!-- Activities -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red uppercase tracking-wider text-sm">Activities</h4>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors no-underline">Weekly Debates</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors no-underline">MUN Workshops</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors no-underline">Guest Lectures</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red uppercase tracking-wider text-sm">Stay Updated</h4>
+                    <p class="text-gray-400 text-sm mb-4">Subscribe to receive updates on upcoming events.</p>
+                    <form class="flex gap-2">
+                        <input type="email" placeholder="Email address"
+                            class="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm w-full focus:outline-none focus:border-ai-red text-white placeholder-gray-500" />
+                        <button type="button"
+                            class="bg-ai-red px-3 py-2 rounded-lg hover:bg-ai-red-dark transition-colors text-white">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm text-center md:text-left">
+                    &copy; <span id="year">2024</span> AIKTC Debate & Dialogue Club. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Logic for Mobile Menu -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].classList.add('rotate-45', 'translate-y-2');
+                spans[1].classList.add('opacity-0');
+                spans[2].classList.add('-rotate-45', '-translate-y-2');
+            } else {
+                mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].classList.remove('rotate-45', 'translate-y-2');
+                spans[1].classList.remove('opacity-0');
+                spans[2].classList.remove('-rotate-45', '-translate-y-2');
+            }
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

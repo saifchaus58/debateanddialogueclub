@@ -2,53 +2,27 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Our Team - Debate & Dialogue Club, AIKTC - Meet the leaders behind our success">
-    <meta name="keywords" content="Debate Club Team AIKTC, Faculty Coordinators, Core Committee, Leadership">
-    <meta name="author" content="Debate & Dialogue Club, AIKTC">
-    <title>Our Team | Debate & Dialogue Club - AIKTC</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="image.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Meet the Team - Debate & Dialogue Club, AIKTC" />
+    <title>Our Team | Debate & Dialogue Club</title>
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="team.css">
-
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background: linear-gradient(135deg,
-                    #ffffff 0%,
-                    #f8f9fa 50%,
-                    #e9ecef 100%);
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-
+    <!-- Tailwind Configuration -->
     <script>
-
         tailwind.config = {
             theme: {
                 extend: {
@@ -66,6 +40,7 @@
                         'float': 'float 6s ease-in-out infinite',
                         'rotate': 'rotate 20s linear infinite',
                         'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s infinite',
                     },
                     keyframes: {
                         float: {
@@ -75,23 +50,69 @@
                         rotate: {
                             from: { transform: 'rotate(0deg)' },
                             to: { transform: 'rotate(360deg)' },
+                        },
+                        bounce: {
+                            '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+                            '40%': { transform: 'translateY(-10px)' },
+                            '60%': { transform: 'translateY(-5px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
                         }
                     }
                 }
             }
         }
     </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+        }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #A63A2F;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8B2B20;
+        }
+    </style>
 </head>
 
-<body class="font-body text-ai-blue pt-40">
-    <!-- - - - -  Navigation - - - -  -->
+<body
+    class="min-h-screen relative font-body text-ai-blue overflow-x-hidden selection:bg-ai-red/30 pt-32 text-decoration-none">
+
+    <!-- Navbar (Synced with Home) -->
     <nav id="navbar"
         class="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-[1200px] z-50 px-8 py-4 transition-all duration-300 rounded-[50px] bg-white/95 backdrop-blur-md shadow-[0_8px_32px_rgba(166,58,47,0.15)] border-ai-red/20 border">
         <div class="flex items-center justify-between max-w-[1400px] mx-auto">
             <!-- Logo -->
-            <div class="flex items-center z-[1001] cursor-pointer group">
+            <a href="index.html" class="flex items-center z-[1001] cursor-pointer group no-underline">
                 <div class="flex items-center gap-3">
                     <div
                         class="w-10 h-10 rounded-full bg-gradient-to-br from-ai-red to-ai-red-dark flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform overflow-hidden">
@@ -102,30 +123,30 @@
                         <span class="font-bold text-ai-red text-lg leading-tight">Dialogue</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex flex-1 justify-center">
                 <ul class="flex items-center gap-10 list-none">
                     <li><a href="index.html#home"
-                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors no-underline"><span
                                 class="z-10">Home</span><span
                                 class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
                     </li>
                     <li><a href="index.html#about"
-                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors no-underline"><span
                                 class="z-10">About</span><span
                                 class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
                     </li>
                     <li><a href="events.html"
-                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors no-underline"><span
                                 class="z-10">Events</span><span
                                 class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
                     </li>
                     <li><a href="team.html"
-                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
-                                class="z-10">Team</span><span
-                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
+                            class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors no-underline"><span
+                                class="z-10 text-ai-red font-bold">Team</span><span
+                                class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300"></span></a>
                     </li>
                 </ul>
             </div>
@@ -153,16 +174,16 @@
         <div id="mobile-menu"
             class="fixed inset-x-0 top-[80px] p-4 transition-all duration-300 md:hidden opacity-0 -translate-y-4 pointer-events-none">
             <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col gap-4">
-                <a href="index.html"
-                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">Home</a>
+                <a href="index.html#home"
+                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors no-underline">Home</a>
                 <a href="index.html#about"
-                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">About</a>
+                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors no-underline">About</a>
                 <a href="events.html"
-                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">Events</a>
+                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors no-underline">Events</a>
                 <a href="team.html"
-                    class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">Team</a>
+                    class="mobile-link text-lg font-semibold text-ai-red text-center py-2 bg-red-50 rounded-lg transition-colors no-underline">Team</a>
                 <div class="h-px bg-gray-100 my-2"></div>
-                <button
+                <button onclick="window.open('https://chat.whatsapp.com/DCftpin2nTLDvwNefvMjHz?mode=hqrc', '_blank')"
                     class="w-full py-3 bg-gradient-to-r from-ai-red to-ai-red-dark text-white rounded-xl font-semibold">
                     Join Club
                 </button>
@@ -170,459 +191,654 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="page-hero">
-        <div class="page-hero-content">
-
-            <h1>Meet Our Team</h1>
-            <p>The passionate individuals who drive the Debate & Dialogue Club forward</p>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team-page">
-        <div class="container">
-            <!-- Faculty Coordinators - 2 in one row -->
-            <div class="team-section">
-                <div class="section-header">
-                    <div class="hero-badge">
-                        <span>Faculty Coordinators</span>
-                    </div>
-                    <p>Guiding us towards excellence with their experience and mentorship</p>
+    <main class="min-h-screen">
+        <!-- Header Section -->
+        <section class="relative pt-20 pb-16 overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0 pointer-events-none z-0">
+                <div class="absolute top-[10%] left-[5%] w-[300px] h-[300px] bg-ai-red/5 rounded-full blur-[80px]">
                 </div>
-                <div class="team-grid two-column">
-                    <!-- Card 1 -->
-                    <div class="lead-card" data-role="Faculty Coordinator">
-                        <div class="card-image">
+                <div
+                    class="absolute bottom-[20%] right-[10%] w-[200px] h-[200px] bg-ai-blue/5 rounded-full blur-[60px]">
+                </div>
+                <div
+                    class="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-b from-ai-red/5 to-transparent rounded-bl-full blur-3xl opacity-50">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-t from-ai-blue/5 to-transparent rounded-tr-full blur-3xl opacity-50">
+                </div>
+            </div>
+
+            <div class="container mx-auto px-6 relative z-10 text-center">
+                <div
+                    class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-8 backdrop-blur-md animate-float">
+                    <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">The Minds Behind the
+                        Magic</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span
+                        class="block bg-clip-text text-transparent bg-gradient-to-br from-ai-blue to-ai-red animate-[fadeInUp_1s_ease-out]">
+                        Meet Our Team
+                    </span>
+                </h1>
+                <p
+                    class="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed animate-[fadeInUp_1.2s_ease-out_0.3s_both]">
+                    The passionate individuals who drive the Debate & Dialogue Club forward with power of speech and
+                    excellence.
+                </p>
+            </div>
+        </section>
+
+        <!-- Faculty Coordinators -->
+        <section class="py-12 relative">
+            <div class="container mx-auto px-6 text-center">
+                <!-- Section Header -->
+                <div class="mb-16">
+                    <div
+                        class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md">
+                        <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Leadership &
+                            Mentorship</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-ai-blue mb-4">Faculty Coordinators</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <!-- Taib Shahid Quraishi -->
+                    <div
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out]">
+                        <div class="relative h-96 overflow-hidden">
                             <img src="assets/taib.jpg" alt="Taib Shahid Quraishi"
-                                class="w-full h-full object-cover rounded-lg">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Taib Shahid Quraishi</span>
-                                <a href="https://linkedin.com/in/taibquraishi" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6 text-left">
+                                <h3 class="text-2xl font-bold text-white mb-1">Taib Shahid Quraishi</h3>
+                                <p class="text-ai-red font-semibold mb-4 text-sm uppercase tracking-wider">Faculty
+                                    Coordinator</p>
+                                <a href="https://linkedin.com/in/taibquraishi" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-ai-red transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Faculty Coordinator</div>
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="lead-card" data-role="Faculty Coordinator">
-                        <div class="card-image">
-                            <img src="assets/tasleem.jpg" alt="Tasleem Patel">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Tasleem Patel</span>
-                                <a href="https://linkedin.com/in/tasleempatel" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                    <!-- Tasleem Patel -->
+                    <div
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.2s_both]">
+                        <div class="relative h-96 overflow-hidden">
+                            <img src="assets/tasleem.jpg" alt="Tasleem Patel"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6 text-left">
+                                <h3 class="text-2xl font-bold text-white mb-1">Tasleem Patel</h3>
+                                <p class="text-ai-red font-semibold mb-4 text-sm uppercase tracking-wider">Faculty
+                                    Coordinator</p>
+                                <a href="https://linkedin.com/in/tasleempatel" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-ai-red transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Faculty Coordinator</div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Core Leadership - 2 in one row -->
-            <div class="team-section">
-                <div class="section-header">
-                    <div class="hero-badge">
-                        <span>Core Leadership</span>
+        <!-- Executive Board -->
+        <section class="py-24 bg-slate-50/50">
+            <div class="container mx-auto px-6 text-center">
+                <!-- Section Header -->
+                <div class="mb-16">
+                    <div
+                        class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md">
+                        <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Core Leadership</span>
                     </div>
-                    <p>Student leaders driving our vision with passion and dedication</p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-ai-blue mb-4">Executive Board</h2>
                 </div>
-                <div class="team-grid two-column">
-                    <!-- Card 1 -->
-                    <div class="lead-card" data-role="President">
-                        <div class="card-image">
-                            <img src="assets/afshan.jpg" alt="Afshan Ansari">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Afshan Ansari</span>
-                                <a href="https://linkedin.com/in/afshanansari" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                    <!-- Afshan Ansari -->
+                    <div
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out]">
+                        <div class="relative h-96 overflow-hidden">
+                            <img src="assets/afshan.jpg" alt="Afshan Ansari"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6 text-left">
+                                <h3 class="text-2xl font-bold text-white mb-1">Afshan Ansari</h3>
+                                <p class="text-ai-red font-semibold mb-4 text-sm uppercase tracking-wider">President</p>
+                                <a href="https://linkedin.com/in/afshanansari" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-ai-red transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">President</div>
                         </div>
                     </div>
 
-                    <!-- Card 2 -->
-                    <div class="lead-card" data-role="Vice President">
-                        <div class="card-image">
-                            <img src="assets/samiya.jpg" alt="Samiya Khan">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Samiya Khan</span>
-                                <a href="https://linkedin.com/in/samiyakhan" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                    <!-- Samiya Khan -->
+                    <div
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.2s_both]">
+                        <div class="relative h-96 overflow-hidden">
+                            <img src="assets/samiya.jpg" alt="Samiya Khan"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6 text-left">
+                                <h3 class="text-2xl font-bold text-white mb-1">Samiya Khan</h3>
+                                <p class="text-ai-red font-semibold mb-4 text-sm uppercase tracking-wider">Vice
+                                    President</p>
+                                <a href="https://linkedin.com/in/samiyakhan" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-ai-red transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Vice President</div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Technical Team -->
-            <div class="team-section">
-                <div class="section-header">
-                    <div class="hero-badge">
-                        <span>Technical Team</span>
+        <!-- Technical Team -->
+        <section class="py-24">
+            <div class="container mx-auto px-6 text-center">
+                <!-- Section Header -->
+                <div class="mb-16">
+                    <div
+                        class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md">
+                        <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Technical
+                            Excellence</span>
                     </div>
-                    <p>Innovators behind our technical excellence and digital presence</p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-ai-blue mb-4">Technical Team</h2>
                 </div>
 
-                <!-- Lead Row -->
-                <div class="tech-lead-row">
-                    <div class="lead-card" data-role=" Lead">
-                        <div class="card-image">
-                            <img src="assets/Saif.jpeg" alt="Saif Chaus">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Saif Chaus</span>
-                                <a href="https://linkedin.com/in/saifchaus" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                <!-- Tech Lead -->
+                <div class="flex justify-center mb-16">
+                    <div
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out] w-full max-w-sm">
+                        <div class="relative h-[450px] overflow-hidden">
+                            <img src="assets/Saif.jpeg" alt="Saif Chaus"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6 text-left">
+                                <h3 class="text-2xl font-bold text-white mb-1">Saif Chaus</h3>
+                                <p class="text-ai-red font-semibold mb-4 text-sm uppercase tracking-wider">Technical
+                                    Lead</p>
+                                <a href="https://linkedin.com/in/saifchaus" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-ai-red transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Technical Lead</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Members Row (4 members) -->
-                <div class="tech-members-row">
-                    <!-- Member 1 -->
-                    <div class="member-card" data-role="Member">
-                        <div class="card-image">
-                            <img src="assets/adina.jpg" alt="Adina Hawaldar">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Adina Hawaldar</span>
+                <!-- Tech Members -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Adina Hawaldar -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.1s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/adina.jpg" alt="Adina Hawaldar"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <a href="https://www.linkedin.com/in/adina-hawaldar-17az6/" target="_blank"
-                                    class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                                    class="w-10 h-10 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Technical Member</div>
+                        </div>
+                        <div class="p-5 text-center bg-white">
+                            <h3 class="text-lg font-bold text-ai-blue mb-1">Adina Hawaldar</h3>
+                            <p class="text-ai-red font-semibold text-xs uppercase tracking-widest">Technical Member</p>
                         </div>
                     </div>
 
-                    <!-- Member 2 -->
-                    <div class="member-card" data-role=" Member">
-                        <div class="card-image">
-                            <img src="assets/Shiakh Affan.jpg" alt="Shaikh Affan">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Shaikh Affan</span>
-                                <a href="https://linkedin.com/in/shaikhaffan" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                    <!-- Shaikh Affan -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.2s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/Shiakh Affan.jpg" alt="Shaikh Affan"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://linkedin.com/in/shaikhaffan" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Technical Member</div>
+                        </div>
+                        <div class="p-5 text-center bg-white">
+                            <h3 class="text-lg font-bold text-ai-blue mb-1">Shaikh Affan</h3>
+                            <p class="text-ai-red font-semibold text-xs uppercase tracking-widest">Technical Member</p>
                         </div>
                     </div>
 
-                    <!-- Member 3 -->
-                    <div class="member-card" data-role=" Member">
-                        <div class="card-image">
-                            <img src="assets/Zaid.jpg" alt="Alex Chen">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Shaikh Mohd Zaid</span>
-                                <a href="https://linkedin.com/in/alexchen" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                    <!-- Shaikh Mohd Zaid -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.3s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/Zaid.jpg" alt="Shaikh Mohd Zaid"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://linkedin.com/in/shaikhmohdzaid" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Technical Member</div>
+                        </div>
+                        <div class="p-5 text-center bg-white">
+                            <h3 class="text-lg font-bold text-ai-blue mb-1">Shaikh Mohd Zaid</h3>
+                            <p class="text-ai-red font-semibold text-xs uppercase tracking-widest">Technical Member</p>
                         </div>
                     </div>
 
-                    <!-- Member 4 -->
-                    <div class="member-card" data-role="Member">
-                        <div class="card-image">
-                            <img src="assets/Abdussalam kaldane.jpg" alt="Priya Sharma">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Abdussalam Kaldane</span>
-                                <a href="https://linkedin.com/in/priyasharma" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                    <!-- Abdussalam Kaldane -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.4s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/Abdussalam kaldane.jpg" alt="Abdussalam Kaldane"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="https://linkedin.com/in/abdussalamkaldane" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Technical Member</div>
+                        </div>
+                        <div class="p-5 text-center bg-white">
+                            <h3 class="text-lg font-bold text-ai-blue mb-1">Abdussalam Kaldane</h3>
+                            <p class="text-ai-red font-semibold text-xs uppercase tracking-widest">Technical Member</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Design Team -->
-            <div class="team-section">
-                <div class="section-header">
-                    <div class="hero-badge">
-                        <span>Design Team</span>
+        <!-- Design Team -->
+        <section class="py-24 bg-slate-50/50">
+            <div class="container mx-auto px-6 text-center">
+                <!-- Section Header -->
+                <div class="mb-16">
+                    <div
+                        class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md">
+                        <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Creative Minds</span>
                     </div>
-                    <p>Creative minds shaping our visual identity and brand presence</p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-ai-blue mb-4">Design Team</h2>
                 </div>
 
-                <!-- Lead Row -->
-                <div class="design-lead-row">
-                    <div class="lead-card" data-role="Lead">
-                        <div class="card-image">
-                            <img src="assets/umar.jpg" alt="Emma Watson">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Umar Syed</span>
-                                <a href="https://linkedin.com/in/emmawatson" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                <!-- Design Lead -->
+                <div class="flex justify-center mb-16">
+                    <div
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out] w-full max-w-sm">
+                        <div class="relative h-[450px] overflow-hidden">
+                            <img src="assets/umar.jpg" alt="Umar Syed"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6 text-left">
+                                <h3 class="text-2xl font-bold text-white mb-1">Umar Syed</h3>
+                                <p class="text-ai-red font-semibold mb-4 text-sm uppercase tracking-wider">Design Lead
+                                </p>
+                                <a href="https://linkedin.com/in/umarsyed" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-ai-red transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Design Lead</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Members Row (3 members) -->
-                <div class="design-members-row">
-                    <!-- Member 1 -->
-                    <div class="member-card" data-role=" Member">
-                        <div class="card-image">
-                            <img src="assets/Madiha Lasne.png" alt="Liam Brown">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Madiha Lasne</span>
-                                <a href="https://linkedin.com/in/liambrown" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                            <div class="member-position">Design Member</div>
-                        </div>
-                    </div>
-
-                    <!-- Member 2 -->
-                    <div class="member-card" data-role=" Member">
-                        <div class="card-image">
-                            <img src="assets/Shahbaz Anjum.jpg" alt="Olivia Martin">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Ansari Shahbaz </span>
-                                <a href="https://linkedin.com/in/oliviamartin" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                            <div class="member-position">Design Member</div>
-                        </div>
-                    </div>
-
-                    <!-- Member 3 -->
-                    <div class="member-card" data-role=" Member">
-                        <div class="card-image">
-                            <img src="assets/Biswajit Parida.jpg" alt="Noah Garcia">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Biswajit Parida </span>
-                                <a href="https://linkedin.com/in/noahgarcia" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                            <div class="member-position">Design Member</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Documentation Team -->
-            <div class="team-section">
-                <div class="section-header">
-                    <div class="hero-badge">
-                        <span>Documentation Team</span>
-                    </div>
-                    <p>Capturing moments and preserving our club's legacy</p>
-                </div>
-
-                <!-- Lead Row -->
-                <div class="doc-lead-row">
-                    <div class="lead-card" data-role="Lead">
-                        <div class="card-image">
-                            <img src="assets/mariyam.png" alt="Sophia Williams">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Mariyam Shaikh</span>
-                                <a href="https://linkedin.com/in/sophiawilliams" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                            <div class="member-position">Documentation Lead</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Members Row (2 members) -->
-                <div class="doc-members-row">
-                    <!-- Member 1 -->
-                    <div class="member-card" data-role="Member">
-                        <div class="card-image">
-                            <img src="assets/Mahek Bagdadi.jpg" alt="James Wilson">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Mehek Bagdadi</span>
-                                <a href="https://linkedin.com/in/jameswilson" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                <!-- Design Members -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Madiha Lasne -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.1s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/Madiha Lasne.png" alt="Madiha Lasne"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Documentation Member</div>
+                        </div>
+                        <div class="p-5 text-center bg-white">
+                            <h3 class="text-lg font-bold text-ai-blue mb-1">Madiha Lasne</h3>
+                            <p class="text-ai-red font-semibold text-xs uppercase tracking-widest">Design Member</p>
                         </div>
                     </div>
 
-                    <!-- Member 2 -->
-                    <div class="member-card" data-role=" Member">
-                        <div class="card-image">
-                            <img src="assets/Nauman (ds).jpg" alt="Maya Patel">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Nauman Patel</span>
-                                <a href="https://linkedin.com/in/mayapatel" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                    <!-- Ansari Shahbaz -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.2s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/Shahbaz Anjum.jpg" alt="Ansari Shahbaz"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Documentation Member</div>
+                        </div>
+                        <div class="p-5 text-center bg-white">
+                            <h3 class="text-lg font-bold text-ai-blue mb-1">Ansari Shahbaz</h3>
+                            <p class="text-ai-red font-semibold text-xs uppercase tracking-widest">Design Member</p>
+                        </div>
+                    </div>
+
+                    <!-- Biswajit Parida -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.3s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/Biswajit Parida.jpg" alt="Biswajit Parida"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-5 text-center bg-white">
+                            <h3 class="text-lg font-bold text-ai-blue mb-1">Biswajit Parida</h3>
+                            <p class="text-ai-red font-semibold text-xs uppercase tracking-widest">Design Member</p>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Media & Marketing Team -->
-            <div class="team-section">
-                <div class="section-header">
-                    <div class="hero-badge">
-                        <span>Media & Marketing Team</span>
+        <!-- Documentation Team -->
+        <section class="py-24">
+            <div class="container mx-auto px-6 text-center">
+                <!-- Section Header -->
+                <div class="mb-16">
+                    <div
+                        class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md">
+                        <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Legacy
+                            Preservation</span>
                     </div>
-                    <p>Amplifying our voice across platforms and engaging our community</p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-ai-blue mb-4">Documentation Team</h2>
                 </div>
 
-                <!-- Leads Row (2 leads) -->
-                <div class="media-leads-row flex justify-center">
-                    <!-- Media Lead -->
-                    <div class="lead-card" data-role=" Lead">
-                        <div class="card-image">
-                            <img src="assets/shifa.jpg" alt="Daniel Lee">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Shifa Gouse</span>
-                                <a href="https://linkedin.com/in/daniellee" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                <!-- Doc Lead -->
+                <div class="flex justify-center mb-16">
+                    <div
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out] w-full max-w-sm">
+                        <div class="relative h-[450px] overflow-hidden">
+                            <img src="assets/mariyam.png" alt="Mariyam Shaikh"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6 text-left">
+                                <h3 class="text-2xl font-bold text-white mb-1">Mariyam Shaikh</h3>
+                                <p class="text-ai-red font-semibold mb-4 text-sm uppercase tracking-wider">Documentation
+                                    Lead</p>
+                                <a href="#" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-ai-red transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Media Lead</div>
                         </div>
                     </div>
-
-
-
                 </div>
 
-                <!-- Members Row (5 members) -->
-                <div class="media-members-row">
-                    <!-- Member 1 -->
-                    <div class="member-card" data-role="Media Member">
-                        <div class="card-image">
-                            <img src="assets/naveed.jpg" alt="Ethan Taylor">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Naveed Ansari</span>
-                                <a href="https://linkedin.com/in/ethantaylor" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                <!-- Doc Members -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    <!-- Mehek Bagdadi -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.1s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/Mahek Bagdadi.jpg" alt="Mehek Bagdadi"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Marketing Member</div>
+                        </div>
+                        <div class="p-5 text-center bg-white">
+                            <h3 class="text-lg font-bold text-ai-blue mb-1">Mehek Bagdadi</h3>
+                            <p class="text-ai-red font-semibold text-xs uppercase tracking-widest">Documentation Member
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Member 2 -->
-                    <div class="member-card" data-role="Member">
-                        <div class="card-image">
-                            <img src="assets/Mahimkar Yamana..png" alt="Ava Thompson">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Mahimkar Yamana </span>
-                                <a href="https://linkedin.com/in/avathompson" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
+                    <!-- Nauman Patel -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.2s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/Nauman (ds).jpg" alt="Nauman Patel"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
                                 </a>
                             </div>
-                            <div class="member-position">Media Member</div>
                         </div>
-                    </div>
-
-                    <!-- Member 3 -->
-                    <div class="member-card" data-role="Member">
-                        <div class="card-image">
-                            <img src="assets/jpg .jpg" alt="Lucas White">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Mirza Ibrahim</span>
-                                <a href="https://linkedin.com/in/lucaswhite" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                            <div class="member-position">Marketing Member</div>
-                        </div>
-                    </div>
-
-                    <!-- Member 4 -->
-                    <div class="member-card" data-role=" Member">
-                        <div class="card-image">
-                            <img src="assets/idrisi mumtarin .jpg" alt="Ryan Cooper">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Idrisi Mumtarin</span>
-                                <a href="https://linkedin.com/in/ryancooper" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                            <div class="member-position">Media Member</div>
-                        </div>
-                    </div>
-
-                    <!-- Member 5 -->
-                    <div class="member-card" data-role="Member">
-                        <div class="card-image">
-                            <img src="assets/Mohsin K.jpg" alt="Chloe Parker">
-                        </div>
-                        <div class="card-info-box">
-                            <div class="name-row">
-                                <span class="member-name">Mosin Kazi </span>
-                                <a href="https://linkedin.com/in/chloeparker" target="_blank" class="linkedin-icon">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </div>
-                            <div class="member-position">Marketing Member</div>
+                        <div class="p-5 text-center bg-white">
+                            <h3 class="text-lg font-bold text-ai-blue mb-1">Nauman Patel</h3>
+                            <p class="text-ai-red font-semibold text-xs uppercase tracking-widest">Documentation Member
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Media & Marketing Team -->
+        <section class="py-24 bg-slate-50/50">
+            <div class="container mx-auto px-6 text-center">
+                <!-- Section Header -->
+                <div class="mb-16">
+                    <div
+                        class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md">
+                        <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Community
+                            Engagement</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-ai-blue mb-4">Media & Marketing Team</h2>
+                </div>
+
+                <!-- Media Lead -->
+                <div class="flex justify-center mb-16">
+                    <!-- Shifa Gouse -->
+                    <div
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out] w-full max-w-sm">
+                        <div class="relative h-96 overflow-hidden">
+                            <img src="assets/shifa.jpg" alt="Shifa Gouse"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
+                            </div>
+                            <div class="absolute bottom-6 left-6 right-6 text-left">
+                                <h3 class="text-2xl font-bold text-white mb-1">Shifa Gouse</h3>
+                                <p class="text-ai-red font-semibold mb-4 text-sm uppercase tracking-wider">Media Lead
+                                </p>
+                                <a href="#" target="_blank"
+                                    class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-ai-red transition-colors">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Media Members -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <!-- Naveed Ansari -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.1s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/naveed.jpg" alt="Naveed Ansari"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" target="_blank"
+                                    class="w-8 h-8 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-linkedin-in text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center bg-white">
+                            <h3 class="text-md font-bold text-ai-blue mb-1">Naveed Ansari</h3>
+                            <p class="text-ai-red font-semibold text-[10px] uppercase tracking-tighter">Marketing Member
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Mahimkar Yamana -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.2s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/Mahimkar Yamana..png" alt="Mahimkar Yamana"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" target="_blank"
+                                    class="w-8 h-8 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-linkedin-in text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center bg-white">
+                            <h3 class="text-md font-bold text-ai-blue mb-1">Mahimkar Yamana</h3>
+                            <p class="text-ai-red font-semibold text-[10px] uppercase tracking-tighter">Media Member</p>
+                        </div>
+                    </div>
+
+                    <!-- Mirza Ibrahim -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.3s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/jpg .jpg" alt="Mirza Ibrahim"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" target="_blank"
+                                    class="w-8 h-8 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-linkedin-in text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center bg-white">
+                            <h3 class="text-md font-bold text-ai-blue mb-1">Mirza Ibrahim</h3>
+                            <p class="text-ai-red font-semibold text-[10px] uppercase tracking-tighter">Marketing Member
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Idrisi Mumtarin -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.4s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/idrisi mumtarin .jpg" alt="Idrisi Mumtarin"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" target="_blank"
+                                    class="w-8 h-8 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-linkedin-in text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center bg-white">
+                            <h3 class="text-md font-bold text-ai-blue mb-1">Idrisi Mumtarin</h3>
+                            <p class="text-ai-red font-semibold text-[10px] uppercase tracking-tighter">Media Member</p>
+                        </div>
+                    </div>
+
+                    <!-- Mosin Kazi -->
+                    <div
+                        class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 animate-[fadeInUp_1s_ease-out_0.5s_both]">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="assets/Mohsin K.jpg" alt="Mosin Kazi"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#" target="_blank"
+                                    class="w-8 h-8 rounded-full bg-ai-red flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                    <i class="fa-brands fa-linkedin-in text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 text-center bg-white">
+                            <h3 class="text-md font-bold text-ai-blue mb-1">Mosin Kazi</h3>
+                            <p class="text-ai-red font-semibold text-[10px] uppercase tracking-tighter">Marketing Member
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Same as Index) -->
     <footer class="bg-ai-blue text-white pt-16 pb-8">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
@@ -632,7 +848,7 @@
                         <div
                             class="w-8 h-8 rounded-full bg-gradient-to-br from-ai-red to-ai-red-dark flex items-center justify-center font-bold text-sm">
                             D</div>
-                        <h3 class="text-xl font-bold">Debate & Dialogue</h3>
+                        <h3 class="text-xl font-bold text-white">Debate & Dialogue</h3>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Anjuman-I-Islam's Kalsekar Technical Campus.<br />
@@ -653,29 +869,33 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-ai-red">Quick Links</h4>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red uppercase tracking-wider text-sm">Quick Links</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Upcoming Events</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Executive Board</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Constitution</a></li>
+                        <li><a href="index.html#about" class="hover:text-white transition-colors no-underline">About
+                                Us</a></li>
+                        <li><a href="events.html" class="hover:text-white transition-colors no-underline">Upcoming
+                                Events</a></li>
+                        <li><a href="team.html" class="hover:text-white transition-colors no-underline">Executive
+                                Board</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors no-underline">Constitution</a></li>
                     </ul>
                 </div>
 
                 <!-- Activities -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-ai-red">Activities</h4>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red uppercase tracking-wider text-sm">Activities</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">Weekly Debates</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">MUN Workshops</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Public Speaking Labs</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Guest Lectures</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors no-underline">Weekly Debates</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors no-underline">MUN Workshops</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors no-underline">Public Speaking Labs</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition-colors no-underline">Guest Lectures</a></li>
                     </ul>
                 </div>
 
                 <!-- Newsletter -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-ai-red">Stay Updated</h4>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red uppercase tracking-wider text-sm">Stay Updated</h4>
                     <p class="text-gray-400 text-sm mb-4">Subscribe to receive updates on upcoming debates.</p>
                     <form class="flex gap-2">
                         <input type="email" placeholder="Email address"
@@ -693,68 +913,55 @@
                     &copy; <span id="year">2024</span> AIKTC Debate & Dialogue Club. All rights reserved.
                 </p>
                 <div class="flex gap-6 text-sm text-gray-500">
-                    <a href="#" class="hover:text-white">Privacy Policy</a>
-                    <a href="#" class="hover:text-white">Terms of Use</a>
+                    <a href="#" class="hover:text-white no-underline">Privacy Policy</a>
+                    <a href="#" class="hover:text-white no-underline">Terms of Use</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Logic for Mobile Menu -->
     <script>
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
 
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
 
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].classList.add('rotate-45', 'translate-y-2');
+                spans[1].classList.add('opacity-0');
+                spans[2].classList.add('-rotate-45', '-translate-y-2');
             } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.08)';
+                mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].classList.remove('rotate-45', 'translate-y-2');
+                spans[1].classList.remove('opacity-0');
+                spans[2].classList.remove('-rotate-45', '-translate-y-2');
             }
         });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const leadCards = document.querySelectorAll('.lead-card');
-            const memberCards = document.querySelectorAll('.member-card');
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            leadCards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-
-            memberCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-                observer.observe(card);
+                const spans = mobileMenuBtn.querySelectorAll('span');
+                spans[0].classList.remove('rotate-45', 'translate-y-2');
+                spans[1].classList.remove('opacity-0');
+                spans[2].classList.remove('-rotate-45', '-translate-y-2');
             });
         });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+    <script type="module" src="main.js"></script>
 </body>
 
 </html>

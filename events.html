@@ -40,7 +40,7 @@
                         'float': 'float 6s ease-in-out infinite',
                         'rotate': 'rotate 20s linear infinite',
                         'pulse-slow': 'pulse 3s ease-in-out infinite',
-                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'bounce-slow': 'bounce 2s infinite',
                     },
                     keyframes: {
                         float: {
@@ -50,6 +50,11 @@
                         rotate: {
                             from: { transform: 'rotate(0deg)' },
                             to: { transform: 'rotate(360deg)' },
+                        },
+                        bounce: {
+                            '0%, 20%, 50%, 80%, 100%': { transform: 'translateY(0)' },
+                            '40%': { transform: 'translateY(-10px)' },
+                            '60%': { transform: 'translateY(-5px)' },
                         },
                         fadeInUp: {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
@@ -105,7 +110,7 @@
 
 <body class="min-h-screen relative font-body text-ai-blue overflow-x-hidden selection:bg-ai-red/30 pt-32">
 
-    <!-- Navbar -->
+    <!-- Navbar (Synced with Home) -->
     <nav id="navbar"
         class="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-[1200px] z-50 px-8 py-4 transition-all duration-300 rounded-[50px] bg-white/95 backdrop-blur-md shadow-[0_8px_32px_rgba(166,58,47,0.15)] border-ai-red/20 border">
         <div class="flex items-center justify-between max-w-[1400px] mx-auto">
@@ -126,7 +131,7 @@
             <!-- Desktop Menu -->
             <div class="hidden md:flex flex-1 justify-center">
                 <ul class="flex items-center gap-10 list-none">
-                    <li><a href="index.html"
+                    <li><a href="index.html#home"
                             class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
                                 class="z-10">Home</span><span
                                 class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300 group-hover:w-full"></span></a>
@@ -138,7 +143,7 @@
                     </li>
                     <li><a href="events.html"
                             class="relative text-ai-blue font-semibold text-base py-2 px-1 group flex flex-col items-center hover:text-ai-blue/80 transition-colors"><span
-                                class="z-10 text-ai-red">Events</span><span
+                                class="z-10 text-ai-red font-bold">Events</span><span
                                 class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-ai-blue to-ai-red transition-all duration-300"></span></a>
                     </li>
                     <li><a href="team.html"
@@ -172,7 +177,7 @@
         <div id="mobile-menu"
             class="fixed inset-x-0 top-[80px] p-4 transition-all duration-300 md:hidden opacity-0 -translate-y-4 pointer-events-none">
             <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col gap-4">
-                <a href="index.html"
+                <a href="index.html#home"
                     class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">Home</a>
                 <a href="index.html#about"
                     class="mobile-link text-lg font-semibold text-ai-blue text-center py-2 hover:bg-gray-50 rounded-lg transition-colors">About</a>
@@ -203,58 +208,164 @@
 
             <div class="container mx-auto px-6 relative z-10 text-center">
                 <div
-                    class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md animate-fade-in-up">
-                    <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Our Journey So Far</span>
+                    class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-8 backdrop-blur-md animate-float">
+                    <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Journey & Impact</span>
                 </div>
-                <h1 class="text-4xl md:text-6xl font-bold text-ai-blue mb-6 animate-fade-in-up"
-                    style="animation-delay: 0.1s;">
-                    Moments That Defined Us
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <span
+                        class="block bg-clip-text text-transparent bg-gradient-to-br from-ai-blue to-ai-red animate-[fadeInUp_1s_ease-out]">
+                        Events & Highlights
+                    </span>
                 </h1>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed animate-fade-in-up"
-                    style="animation-delay: 0.2s;">
-                    Explore the highlights of our past events, where ideas turned into action and students into leaders.
+                <p
+                    class="text-lg text-gray-600 max-w-2xl mx-auto font-light leading-relaxed animate-[fadeInUp_1.2s_ease-out_0.3s_both]">
+                    Experience the synergy of debate and dialogue. From flagship competitions to transformative
+                    workshops.
                 </p>
             </div>
         </section>
 
-        <!-- Past Events Grid -->
-        <section class="py-12 bg-white/50 relative">
+        <!-- Upcoming Events -->
+        <section class="py-12 relative">
             <div class="container mx-auto px-6">
-                <!-- Events Grid -->
-                <div class="grid grid-cols-1 gap-8 pb-20 justify-items-center">
+                <!-- Section Header -->
+                <div class="mb-16 text-center">
+                    <div
+                        class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md">
+                        <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Mark Your
+                            Calendars</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-ai-blue mb-4">Upcoming Events</h2>
+                </div>
 
-                    <!-- Event Card: AIKTC MUN 2026 -->
-                    <div onclick="location.href='mungal26.html'"
-                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 event-card animate-fade-in-up cursor-pointer w-full max-w-lg"
-                        style="animation-delay: 0.4s;">
-                        <div class="relative h-64 overflow-hidden">
-                            <img src="eventpic/day2/7.jpeg" alt="AIKTC MUN 2026"
+                <!-- Events Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <!-- Event Card 1 -->
+                    <div onclick="location.href='event-1.html'"
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 event-card animate-[fadeInUp_1s_ease-out] cursor-pointer">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="events1.png" alt="Youth Conference 2026"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div
                                 class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
                             </div>
-                            <div class="absolute bottom-4 left-4">
+                            <div class="absolute top-4 right-4">
                                 <span
-                                    class="px-3 py-1 bg-ai-red text-white text-xs font-bold rounded-lg mb-2 inline-block">MUN
-                                    Event</span>
-                                <p class="text-white/80 text-sm font-medium"><i
-                                        class="fa-regular fa-calendar mr-2"></i>January 2026</p>
+                                    class="px-3 py-1 bg-ai-red text-white text-[10px] font-bold rounded-full uppercase tracking-wider shadow-lg">Registering
+                                    Soon</span>
+                            </div>
+                            <div class="absolute bottom-6 left-6">
+                                <p class="text-white/80 text-xs font-semibold uppercase tracking-widest mb-1">Coming
+                                    Soon</p>
+                                <h3 class="text-2xl font-bold text-white">Youth Conference 2026</h3>
                             </div>
                         </div>
                         <div class="p-8">
-                            <h3 class="text-2xl font-bold text-ai-blue mb-3 group-hover:text-ai-red transition-colors">
-                                AIKTC MUN 2026</h3>
-                            <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                                Join us for the most prestigious Model United Nations conference of the year. Debate
-                                global issues, draft resolutions, and lead the change.
+                            <p class="text-gray-500 text-sm leading-relaxed mb-6 font-light">
+                                An immersive leadership experience where students tackle real-life crisis scenarios
+                                through analytical thinking and teamwork.
                             </p>
-                            <div class="inline-flex items-center text-ai-red font-semibold text-sm group/link">
-                                View Gallery <i
-                                    class="fa-solid fa-arrow-right ml-2 group-hover/link:translate-x-1 transition-transform"></i>
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="inline-flex items-center text-ai-red font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all">
+                                    Explore Event <i
+                                        class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </span>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-ai-red/10 flex items-center justify-center text-ai-red group-hover:bg-ai-red group-hover:text-white transition-colors duration-300">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Event Card 2 -->
+                    <div onclick="location.href='event-2.html'"
+                        class="group relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 event-card animate-[fadeInUp_1s_ease-out_0.2s_both] cursor-pointer">
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="image.png" alt="Corporate Mock Interview Competition"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-ai-blue/90 via-transparent to-transparent opacity-60">
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="px-3 py-1 bg-ai-red text-white text-[10px] font-bold rounded-full uppercase tracking-wider shadow-lg">Skill
+                                    Up</span>
+                            </div>
+                            <div class="absolute bottom-6 left-6">
+                                <p class="text-white/80 text-xs font-semibold uppercase tracking-widest mb-1">Career
+                                    Readiness</p>
+                                <h3 class="text-2xl font-bold text-white">Mock Interview 2026</h3>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <p class="text-gray-500 text-sm leading-relaxed mb-6 font-light">
+                                A structured placement-simulation experience across three evaluation phases to prepare
+                                students for corporate interview standards.
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span
+                                    class="inline-flex items-center text-ai-red font-bold text-xs uppercase tracking-widest group-hover:gap-2 transition-all">
+                                    Explore Event <i
+                                        class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </span>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-ai-red/10 flex items-center justify-center text-ai-red group-hover:bg-ai-red group-hover:text-white transition-colors duration-300">
+                                    <i class="fa-solid fa-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Events -->
+        <section class="py-20 bg-slate-50/50 relative">
+            <div class="container mx-auto px-6">
+                <!-- Section Header -->
+                <div class="mb-16 text-center">
+                    <div
+                        class="inline-block bg-ai-red/10 border border-ai-red/30 rounded-full px-6 py-2 mb-6 backdrop-blur-md">
+                        <span class="text-ai-red font-semibold text-sm tracking-wide uppercase">Our Heritage</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-ai-blue mb-4">Past Events</h2>
+                </div>
+
+                <div class="grid grid-cols-1 gap-12 max-w-4xl mx-auto">
+                    <!-- Past Event: AIKTC MUN 2026 -->
+                    <div onclick="location.href='mungal26.html'"
+                        class="group relative bg-white rounded-[2rem] overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 flex flex-col md:flex-row cursor-pointer animate-[fadeInUp_1s_ease-out_0.4s_both]">
+                        <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden">
+                            <img src="eventpic/day2/7.jpeg" alt="AIKTC MUN 2026"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                            <div class="absolute inset-0 bg-gradient-to-r from-ai-blue/20 to-transparent"></div>
+                        </div>
+                        <div class="md:w-3/5 p-10 flex flex-col justify-center">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span
+                                    class="px-3 py-1 bg-ai-blue/5 text-ai-blue text-[10px] font-bold rounded-full uppercase tracking-tighter">January
+                                    2026</span>
+                                <div class="h-1 w-1 bg-gray-300 rounded-full"></div>
+                                <span
+                                    class="text-gray-400 text-[10px] font-bold uppercase tracking-tighter">Conference</span>
+                            </div>
+                            <h3 class="text-3xl font-bold text-ai-blue mb-4 group-hover:text-ai-red transition-colors">
+                                AIKTC MUN 2026</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed mb-8 font-light">
+                                A high-stakes diplomatic simulation where students tackled global crises. A witness to
+                                exceptional diplomacy and leadership.
+                            </p>
+                            <div>
+                                <span
+                                    class="inline-flex items-center text-ai-red font-bold text-xs uppercase tracking-widest border-b-2 border-ai-red/0 hover:border-ai-red/100 transition-all pb-1">
+                                    Browse Gallery <i
+                                        class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -271,7 +382,7 @@
                         <div
                             class="w-8 h-8 rounded-full bg-gradient-to-br from-ai-red to-ai-red-dark flex items-center justify-center font-bold text-sm">
                             D</div>
-                        <h3 class="text-xl font-bold">Debate & Dialogue</h3>
+                        <h3 class="text-xl font-bold text-white">Debate & Dialogue</h3>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Anjuman-I-Islam's Kalsekar Technical Campus.<br />
@@ -292,7 +403,7 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-ai-red">Quick Links</h4>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red uppercase tracking-wider text-sm">Quick Links</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
                         <li><a href="index.html#about" class="hover:text-white transition-colors">About Us</a></li>
                         <li><a href="events.html" class="hover:text-white transition-colors">Upcoming Events</a></li>
@@ -303,7 +414,7 @@
 
                 <!-- Activities -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-ai-red">Activities</h4>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red uppercase tracking-wider text-sm">Activities</h4>
                     <ul class="space-y-3 text-gray-400 text-sm">
                         <li><a href="#" class="hover:text-white transition-colors">Weekly Debates</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">MUN Workshops</a></li>
@@ -314,7 +425,7 @@
 
                 <!-- Newsletter -->
                 <div>
-                    <h4 class="text-lg font-bold mb-6 text-ai-red">Stay Updated</h4>
+                    <h4 class="text-lg font-bold mb-6 text-ai-red uppercase tracking-wider text-sm">Stay Updated</h4>
                     <p class="text-gray-400 text-sm mb-4">Subscribe to receive updates on upcoming debates.</p>
                     <form class="flex gap-2">
                         <input type="email" placeholder="Email address"
@@ -351,7 +462,6 @@
                 mobileMenu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
                 mobileMenu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
 
-                // Animate hamburger to X
                 const spans = mobileMenuBtn.querySelectorAll('span');
                 spans[0].classList.add('rotate-45', 'translate-y-2');
                 spans[1].classList.add('opacity-0');
@@ -360,7 +470,6 @@
                 mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
                 mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
 
-                // Animate X back to hamburger
                 const spans = mobileMenuBtn.querySelectorAll('span');
                 spans[0].classList.remove('rotate-45', 'translate-y-2');
                 spans[1].classList.remove('opacity-0');
@@ -368,7 +477,6 @@
             }
         });
 
-        // Close mobile menu when clicking a link
         document.querySelectorAll('.mobile-link').forEach(link => {
             link.addEventListener('click', () => {
                 isMenuOpen = false;
@@ -381,9 +489,9 @@
             });
         });
 
-        // Update Year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+    <script type="module" src="main.js"></script>
 </body>
 
 </html>
